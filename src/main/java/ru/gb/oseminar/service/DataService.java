@@ -1,36 +1,18 @@
 package ru.gb.oseminar.service;
 
-import ru.gb.oseminar.data.Student;
 import ru.gb.oseminar.data.User;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
-public class DataService {
+public interface DataService {
+    void createStudent(String firstName, String lastName, String patronymic);
 
-    private List<User> users;
+    void createTeacher(String firstName, String lastName, String patronymic);
 
-    public DataService() {
-        this.users = new ArrayList<>();
-    }
+    List<User> getAll();
 
-    public List<User> getAll(){
-        return this.users;
-    }
+    void deleteStudent(Long id);
 
-    public void create(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
-        Long countMaxId = 0L;
-        for (User user: this.users){
-            if(user instanceof Student){
-                if (((Student) user).getStudentId() > countMaxId){
-                    countMaxId = ((Student) user).getStudentId();
-                }
-            }
-        }
-        countMaxId++;
+    void deleteTeacher(Long id);
 
-        Student student = new Student(firstName, secondName, patronymic, dateOfBirth, countMaxId);
-        this.users.add(student);
-    }
 }

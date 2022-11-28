@@ -1,20 +1,28 @@
 package ru.gb.oseminar.data;
 
-import java.time.LocalDate;
+public class Teacher extends User {
+    private Long teacherID;
 
-public class Teacher extends User{
-
-    private Long teacherId;
-
-    public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
-        super(firstName, secondName, patronymic, dateOfBirth);
+    public Teacher(String firstName, String lastName, String patronymic, Long teacherID) {
+        super(firstName, lastName, patronymic);
+        this.teacherID = teacherID;
     }
 
-    public Long getTeacherId() {
-        return teacherId;
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "firstName='" + super.getFirstName() + '\'' +
+                ", lastName='" + super.getLastName() + '\'' +
+                ", patronymic='" + super.getPatronymic() + '\'' +
+                ", teacherID=" + teacherID +
+                '}';
     }
 
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
+    public Long getTeacherID() {
+        return teacherID;
+    }
+
+    public void setTeacherID(Long teacherID) {
+        this.teacherID = teacherID;
     }
 }

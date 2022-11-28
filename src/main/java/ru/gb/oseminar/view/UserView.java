@@ -7,12 +7,10 @@ import java.util.logging.Logger;
 
 public class UserView {
 
-    Logger logger = Logger.getLogger(UserView.class.getName());
-
-    public void sendOnConsole(List<User> userList){
-        for(User user: userList){
-            logger.info(user.toString());
+    public void sendOnConsole(List<User> users) {
+        Logger log = Logger.getLogger(UserView.class.getName());
+        for (User user : users) {
+            log.info(user.toString());
         }
     }
-
 }
