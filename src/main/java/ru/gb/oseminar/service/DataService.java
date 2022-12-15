@@ -1,18 +1,18 @@
 package ru.gb.oseminar.service;
 
-import ru.gb.oseminar.data.User;
+ import ru.gb.oseminar.data.User;
 
-import java.util.List;
+ import java.util.List;
 
-public interface DataService {
-    void createStudent(String firstName, String lastName, String patronymic);
+ public interface DataService {
+     void createStudent(String firstName, String lastName, String patronymic);
 
-    void createTeacher(String firstName, String lastName, String patronymic);
+     void createTeacher(String firstName, String lastName, String patronymic);
 
-    List<User> getAll();
+     List<User> getAll();
 
-    void deleteStudent(Long id);
+     void deleteStudent(Long id);
 
-    void deleteTeacher(Long id);
+     void deleteTeacher(Long id);
 
-}
+ }
