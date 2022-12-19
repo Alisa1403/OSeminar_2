@@ -1,15 +1,15 @@
 package ru.gb.oseminar;
 
-import ru.gb.oseminar.controller.TaskController;
+import ru.gb.oseminar.controllers.UserController;
 import ru.gb.oseminar.model.*;
-import ru.gb.oseminar.view.ViewTask;
+import ru.gb.oseminar.views.ViewUser;
 
 public class Main {
     public static void main(String[] args) {
-        FileOperation fileOperation = new FileOperationImpl("tasks.csv");
-        Repository repository = new RepositoryFile(fileOperation);
-        TaskController controller = new TaskController(repository);
-        ViewTask view = new ViewTask(controller);
+        FileOperation fileOperation = new FileOperationImpl("users.csv");
+        Repository repository = new RepositoryFileCsv(fileOperation);
+        UserController controller = new UserController(repository);
+        ViewUser view = new ViewUser(controller);
         view.run();
     }
 }
